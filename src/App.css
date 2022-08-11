@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+    url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+
+body{
+  margin: 0px;
+  font-family:'Inter';
+}
+
+.Container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* justify-content:first baseline; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.HeadingSection{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo {
+  height: 1.5em;
+  margin-right: 0.2em;
+}
+
+.CompanyText{
+  font-weight: 1000;
+  font-size: 1.2em;  
+}
+
+.ProgressbarSection{
+  margin-bottom: 2em;
+  width: 35%;
+}
+
+.FormInfoArea{
+  margin-bottom: 1.5em;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.FormPrimaryInfo {
+  font-weight: 1000;
+  font-size: 1.3em;
+}
+
+.FormSecondaryInfo {
+  margin-top: 5px;
+  font-weight: 1000;
+  font-size: 12px;
+  font-weight: 100;
+  color: grey;
+}
+
+.FormArea{
+  width: 30%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  /* border: 1px solid black; */
+  /* @media (max-width: 930px) {
+    width: 50%;
+    min-height: 200px;
+  };
+  @media (max-width: 560px) {
+    width: 60%;
+  };
+  @media (max-width: 420px) {
+    width: 70%;
+  }; */
+}
+
+.fullname{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.displayname {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label{
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+input{
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0.8em;
+  border: 1px solid rgb(192, 190, 190);
+  border-radius: 0.3em;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(192, 190, 190);
+  font-weight: 100;
+  opacity: 1;
+  /* Firefox */
+}
+button{
+  /* font-weight: 700; */
+  border: none;
+  background-color: rgb(58, 53, 187);
+  color: white;
+  padding: 1em;
+  width: 100%;
+  border-radius: 0.3em;
+  cursor: pointer;
+  margin-bottom: 10em;
+}
+
+@media only screen and (max-width: 930px) {
+  .FormArea {
+      width: 50%;
+    }
+  
+    .Container {
+      justify-content: space-evenly;
+    }
+  
+    .ProgressbarSection {
+      width: 50%;
+    }
+  
+    .Logo {
+      height: 2em;
+    }
+  
+    .CompanyText {
+      font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+  .FormArea {
+      width: 60%;
+    }
+  
+    .Container {
+      justify-content: space-evenly;
+    }
+  
+    .ProgressbarSection {
+      width: 60%;
+    }
+  
+    .Logo {
+      height: 2em;
+    }
+  
+    .CompanyText {
+      font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+  .FormArea {
+    width: 80%;
+  }
+  .Container {
+    justify-content:space-evenly; 
+  }
+  .ProgressbarSection {
+    width: 70%;
+  }
+  .Logo {
+    height: 2.5em;
+  }
+  .CompanyText {
+    font-size: 2em;
+  }
+}
