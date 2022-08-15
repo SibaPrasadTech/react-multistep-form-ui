@@ -1,15 +1,22 @@
 import { useContext } from 'react';
 import FormContext from '../context/FormContext';
 import "../styles/FormArea.css";
+import validateFormData from '../utils/validateFormData';
 
 const FormArea = ({ changeStep, data }) => {
 
   const { onboardingData, setOnboardingData } = useContext(FormContext);
   console.log(onboardingData);
   const onClickHandler = () => {
-    changeStep((prevStep) => {
-      return prevStep + 1
-    })
+    let validated = validateFormData(data.step, onboardingData, setOnboardingData);
+    if (validated) {
+      changeStep((prevStep) => {
+        return prevStep + 1
+      })
+    }
+    else {
+
+    }
   }
 
   const conditionalContent = () => {
@@ -76,7 +83,7 @@ const FormArea = ({ changeStep, data }) => {
               <img src={data.icon} alt="icon" />
             </div>
             <div className='successMessage'>
-              <div>{data.successMessagePrimary("Eden!")}</div>
+              <div>{data.successMessagePrimary(onboardingData.displayname)}</div>
               <div>{data.successMessageSecondary}</div>
             </div>
           </div>)

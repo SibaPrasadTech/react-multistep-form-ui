@@ -7,13 +7,16 @@ import FormArea from './components/FormArea';
 import './styles/App.css';
 import './fonts/Inter-Regular.ttf';
 import FormContext from './context/FormContext';
+import ErrorMessage from './components/ErrorMessage';
 
 const InitialValues = {
   fullname: "",
   displayname: "",
   workspaceName: "",
   workspaceURL: "",
-  withMyTeam: false
+  withMyTeam: false,
+  validationStatus: true,
+  validationErrorMessage: ""
 }
 
 function App() {
@@ -21,7 +24,7 @@ function App() {
   const [onboardingData, setOnboardingData] = useState(InitialValues);
   if (index > formData.length - 1) {
     setIndex(0);
-    return alert("Form submitted with : ", formData);
+    return alert("Form submitted with : " + JSON.stringify(onboardingData));
   }
   // else if (index === formData.length - 1) {
   //   return (<div className="Container">
@@ -39,6 +42,7 @@ function App() {
           <HeadingSection />
           <ProgressBar changeStep={setIndex} currStep={index} totalSteps={formData.length} />
           {formData[index].FormInfoArea && <FormInfo data={formData[index]} />}
+          <ErrorMessage />
           <FormArea changeStep={setIndex} data={formData[index]} />
         </FormContext.Provider>
       </div>
