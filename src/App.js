@@ -1,51 +1,49 @@
-import './App.css';
+import HeadingSection from './components/HeadingSection';
+import ProgressBar from './components/ProgressBar';
+import { useState } from 'react';
+import formData from './ConfigFormData';
+import FormInfo from './components/FormInfo';
+import FormArea from './components/FormArea';
+import './styles/App.css';
 import './fonts/Inter-Regular.ttf';
-import './step.css';
+import FormContext from './context/FormContext';
+
+const InitialValues = {
+  fullname: "",
+  displayname: "",
+  workspaceName: "",
+  workspaceURL: "",
+  withMyTeam: false
+}
 
 function App() {
-  return (
-    <div className="Container">
-      <div className="HeadingSection">
-        <img className="Logo" src={process.env.PUBLIC_URL + "/logo.png"} alt="LOGO" />
-        <span className="CompanyText">Cutshort</span>
+  const [index, setIndex] = useState(0);
+  const [onboardingData, setOnboardingData] = useState(InitialValues);
+  if (index > formData.length - 1) {
+    setIndex(0);
+    return alert("Form submitted with : ", formData);
+  }
+  // else if (index === formData.length - 1) {
+  //   return (<div className="Container">
+  //     <FormContext.Provider value={{ onboardingData, setOnboardingData }}>
+  //       <HeadingSection />
+  //       <ProgressBar changeStep={setIndex} currStep={index} totalSteps={formData.length} />
+  //       <FormArea changeStep={setIndex} data={formData[index]} />
+  //     </FormContext.Provider>
+  //   </div>)
+  //} 
+  else {
+    return (
+      <div className="Container">
+        <FormContext.Provider value={{ onboardingData, setOnboardingData }}>
+          <HeadingSection />
+          <ProgressBar changeStep={setIndex} currStep={index} totalSteps={formData.length} />
+          {formData[index].FormInfoArea && <FormInfo data={formData[index]} />}
+          <FormArea changeStep={setIndex} data={formData[index]} />
+        </FormContext.Provider>
       </div>
-      <div className="ProgressbarSection">
-        <div class="stepper-wrapper">
-          <div class="stepper-item completed">
-            <div class="step-counter">1</div>
-          </div>
-          <div class="stepper-item completed">
-            <div class="step-counter">2</div>
-          </div>
-          <div class="stepper-item active">
-            <div class="step-counter">3</div>
-          </div>
-          <div class="stepper-item">
-            <div class="step-counter">4</div>
-          </div>
-        </div>
-      </div>
-      <div className="FormInfoArea">
-        <div className="FormPrimaryInfo">Welcome! First things first...</div>
-        <div className="FormSecondaryInfo">You can always change them later.</div>
-      </div>
-      <div className="FormArea">
-        <div className="QuestionSection">
-          <div className="fullname">
-            <label for="fullname">Full Name</label>
-            <input id="name" type="text" placeholder='Elon Musk' />
-          </div>
-          <div className="displayname">
-            <label for="displayname">Display Name</label>
-            <input id="displayname" type="text" placeholder='Musk' />
-          </div>
-        </div>
-        <div className="ButtonSection">
-          <button>Create Workspace</button>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

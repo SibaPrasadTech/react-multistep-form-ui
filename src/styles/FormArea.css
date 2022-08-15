@@ -1,0 +1,195 @@
+.FormArea {
+  width: 30%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.FormWithInputFeilds {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormWithSelectCards {
+  display: flex;
+}
+
+.selectCardsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.selectCardsWrapper:first-child {
+  margin-right: 3em;
+}
+
+.selectCardsWrapper {
+  padding: 1em;
+  min-height: 5em;
+  border: 1px solid rgb(192, 190, 190);
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  border: 1.5px solid rgb(58, 53, 187);
+  background-color: rgb(243, 251, 252);
+}
+
+.selectCardsWrapper>div> img {
+  height: 1.2em;
+  width: 1em;
+}
+
+.selectCardsWrapper> div > .primary {
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.selectCardsWrapper> div> .secondary {
+  font-size: 0.6em;
+  color:rgb(192, 190, 190);
+  margin-bottom: 0.6em;
+}
+
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.inputWrapper > label > span {
+  margin-left: 0.8em;
+  color:rgb(192, 190, 190);
+  font-size: 0.6em;
+}
+
+.inputWrapper> .specialInput{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.inputWrapper>.specialInput>div {
+  border: 1px solid rgb(192, 190, 190);
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0.8em;
+  border: 1px solid rgb(192, 190, 190);
+  border-radius: 0.3em;
+  background-color: rgb(238, 236, 236);
+}
+
+.inputWrapper>.specialInput > input {
+  flex: 1;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0.8em;
+  border: 1px solid rgb(192, 190, 190);
+  border-radius: 0.3em;
+}
+
+input {
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0.8em;
+  border: 1px solid rgb(192, 190, 190);
+  border-radius: 0.3em;
+}
+
+::placeholder {
+  color: rgb(192, 190, 190);
+  font-weight: 100;
+  opacity: 1;
+}
+
+.successMessageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.successMessageWrapper > .successIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.successMessageWrapper > div > img {
+  margin-top: 3em;
+  height: 3em;
+  width: 3.2em;
+}
+
+.successMessageWrapper > .successMessage > div:first-child {
+  font-size: 1.5em;
+  font-weight: 1000;
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.successMessageWrapper>.successMessage>div:nth-child(2) {
+  font-size: 0.6em;
+  margin-top: 0.4em;
+  margin-bottom: 3.4em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color:rgb(144, 144, 144);
+}
+
+
+
+button {
+  /* font-weight: 700; */
+  border: none;
+  background-color: rgb(58, 53, 187);
+  color: white;
+  padding: 1em;
+  width: 100%;
+  border-radius: 0.3em;
+  cursor: pointer;
+  margin-bottom: 10em;
+}
+
+
+@media only screen and (max-width: 930px) {
+  .FormArea {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .FormArea {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .FormArea {
+    width: 80%;
+  }
+}

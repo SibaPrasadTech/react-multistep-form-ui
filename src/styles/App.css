@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Inter";
   src: local("Inter"),
-    url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+    url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
 }
 
 body{
@@ -13,7 +13,6 @@ body{
   height: 100vh;
   width: 100vw;
   display: flex;
-  /* justify-content:first baseline; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -44,12 +43,10 @@ body{
 
 .FormInfoArea{
   margin-bottom: 1.5em;
- 
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .FormPrimaryInfo {
@@ -65,74 +62,8 @@ body{
   color: grey;
 }
 
-.FormArea{
-  width: 30%;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  /* border: 1px solid black; */
-  /* @media (max-width: 930px) {
-    width: 50%;
-    min-height: 200px;
-  };
-  @media (max-width: 560px) {
-    width: 60%;
-  };
-  @media (max-width: 420px) {
-    width: 70%;
-  }; */
-}
-
-.fullname{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-}
-
-.displayname {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-}
-
-label{
-  font-size: 0.8em;
-  font-weight: 700;
-}
-
-input{
-  font-size: 0.8em;
-  font-weight: 500;
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-  padding: 0.8em;
-  border: 1px solid rgb(192, 190, 190);
-  border-radius: 0.3em;
-}
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(192, 190, 190);
-  font-weight: 100;
-  opacity: 1;
-  /* Firefox */
-}
-button{
-  /* font-weight: 700; */
-  border: none;
-  background-color: rgb(58, 53, 187);
-  color: white;
-  padding: 1em;
-  width: 100%;
-  border-radius: 0.3em;
-  cursor: pointer;
-  margin-bottom: 10em;
-}
-
 @media only screen and (max-width: 930px) {
-  .FormArea {
-      width: 50%;
-    }
+  
   
     .Container {
       justify-content: space-evenly;
@@ -152,16 +83,14 @@ button{
 }
 
 @media only screen and (max-width: 560px) {
-  .FormArea {
-      width: 60%;
-    }
+  
   
     .Container {
       justify-content: space-evenly;
     }
   
     .ProgressbarSection {
-      width: 60%;
+      width: 70%;
     }
   
     .Logo {
@@ -171,17 +100,20 @@ button{
     .CompanyText {
       font-size: 1.5em;
     }
+
+    .FormPrimaryInfo {
+      font-weight: 1000;
+      font-size: 1.2em;
+    }
 }
 
 @media only screen and (max-width: 460px) {
-  .FormArea {
-    width: 80%;
-  }
+  
   .Container {
     justify-content:space-evenly; 
   }
   .ProgressbarSection {
-    width: 70%;
+    width: 80%;
   }
   .Logo {
     height: 2.5em;
@@ -189,4 +121,14 @@ button{
   .CompanyText {
     font-size: 2em;
   }
+
+  .FormPrimaryInfo {
+    font-weight: 1000;
+    font-size: 1.1em;
+  }
+
+  .FormSecondaryInfo {
+    font-size: 11px;
+  }
+
 }
